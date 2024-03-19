@@ -13,7 +13,14 @@ struct LevelBarWidget: View {
     @State private var animatedWidth: CGFloat = 0 // State to control the animated width
     var percent: Float
   
-
+    let background = Color(red: 0.82, green: 0.706, blue: 0.863) // #d1b4dc
+    let gradientColor = [
+        Color(red: 0.976, green: 0.976, blue: 0.976),
+        Color(red: 0.976, green: 0.976, blue: 0.976),
+        Color(red: 0.976, green: 0.976, blue: 0.976),
+        Color(red: 0.933, green: 0.882, blue: 0.945),
+        Color(red: 0.898, green: 0.796, blue: 0.925),
+    ]
     var body: some View {
         let multiplayer = width / 100
         ZStack(alignment: .leading) {

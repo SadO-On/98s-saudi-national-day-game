@@ -30,14 +30,16 @@ struct ResultScreen: View {
                 VStack {
                     Spacer()
 
-//                    LottieView(lottieFile: starsCount == 3 ? "three-star-lottie.json" : starsCount == 2 ? "two-star-lottie.json" : starsCount == 1 ? "one-star-lottie.json" : "zero-star-lottie.json") {
-//                        isShow = true
-//                    }.onAppear(perform: {
-//                        SoundManagerV2.shared.play(starsCount == 3 ? "three-star-sound" : starsCount == 2 ? "two-star-sound" : starsCount == 1 ? "one-star-sound" : "zero-star-sound")
-//                    })
+                    LottieView(lottieFile: starsCount == 3 ? "three-star.json" : starsCount == 2 ? "two-star.json" : starsCount == 1 ? "one-star.json" : "zero-star.json") {
+                        isShow = true
+                    }.onAppear(perform: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                            SoundManagerV2.shared.play(starsCount == 3 ? "three-star-sound" : starsCount == 2 ? "two-star-sound" : starsCount == 1 ? "one-star-sound" : "zero-star-sound")
+                        }
+                    })
 
                     PhraseWidget(starsCount: starsCount)
-                        .padding(.top, isWin ? -(UIScreen.screenWidth * 0.3) :-(UIScreen.screenWidth * 0.20)) // -140 -80
+                        .padding(.top, isWin ? -(UIScreen.screenWidth * 0.3) :-(UIScreen.screenWidth * 0.20))
                         .scaleEffect(scales[1])
                         .onChange(of: isShow, perform: { _ in
                             withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.2)) {
@@ -52,7 +54,7 @@ struct ResultScreen: View {
                         .foregroundColor(textColor)
                         .scaleEffect(scales[2])
                         .onChange(of: isShow, perform: { _ in
-                            withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0)) {
+                            withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.4)) {
                                 scales[2] = 1
                             }
                         })
@@ -68,7 +70,7 @@ struct ResultScreen: View {
                         }
                     }.scaleEffect(scales[3])
                         .onChange(of: isShow, perform: { _ in
-                            withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0)) {
+                            withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.6)) {
                                 scales[3] = 1
                             }
                         }).hide(if: isWin)
@@ -115,13 +117,13 @@ struct ResultScreen: View {
             }.onAppear{
                 isShow = true
             }
-//            .imageShareSheet(isPresented: $showShareSheet, image: UIImage(named: starsCount == 3 ? "share-3" : "share-2", in: .module, with: nil)!)
+            .imageShareSheet(isPresented: $showShareSheet, image: UIImage(named: starsCount == 3 ? "share_3" : "share_2", in: .module, with: nil)!)
         }
     }
 }
 
 #Preview {
-    ResultScreen(isWin: false, starsCount: 3, list: ["حازم", "ام", "زرع"])
+    ResultScreen(isWin: true, starsCount: 3, list: ["حازم", "ام", "زرع"])
 }
 
 func charAsString(str: String, index: Int) -> String {

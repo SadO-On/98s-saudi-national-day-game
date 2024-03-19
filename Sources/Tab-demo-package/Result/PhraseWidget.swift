@@ -15,32 +15,32 @@ struct PhraseWidget: View {
         ZStack {
             switch starsCount {
             case 0:
-                Image("Sad", bundle: .module)
+                Image("phrase-1", bundle: .module)
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.screenWidth * 0.4, height: UIScreen.screenWidth * 0.42)
             case 1:
-                Image("Sad", bundle: .module)
+                Image("phrase-1", bundle: .module)
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.screenWidth * 0.55, height: UIScreen.screenWidth * 0.57)
             case 2:
-                Image("Kfo", bundle: .module)
+                Image("phrase-2", bundle: .module)
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.screenWidth * 0.55, height: UIScreen.screenWidth * 0.57)
             case 3:
-                Image("Legend", bundle: .module)
+                Image("phrase-3", bundle: .module)
                     .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.screenWidth * 0.55, height: UIScreen.screenWidth * 0.57)
             default:
-                Image("Kfo", bundle: .module)
+                Image("phrase-1", bundle: .module)
             }
         }
     }
 }
 
 #Preview {
-    PhraseWidget(starsCount: 3)
+    PhraseWidget(starsCount: 2)
 }

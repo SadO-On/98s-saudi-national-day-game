@@ -29,7 +29,7 @@ let package = Package(
                 .product(name: "Lottie", package: "lottie-spm"),
                 .byName(name: "UIPilot")
             ],
-            resources: [.process("Media.xcassets"), .process("Sound")]),
+            resources: [.process("Media.xcassets"), .process("Sound"), .process("Lottie"), .process("Video")]),
         
      
         .binaryTarget(name: "Shared", path: "./Sources/shared.xcframework")

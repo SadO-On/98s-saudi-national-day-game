@@ -63,8 +63,13 @@ struct HomeScreen: View {
                         withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.3)) {
                             scales[2] = 1
                         }
-                    }
+                    }        
                 StarterAnimatedWidget()
+                    .onAppear(perform: {
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.3)) {
+                        scales[2] = 1
+                    }
+                })
                 Spacer()
                 PrimaryButtonWidget(text: "العب", onClick: {
                     if viewModel.state.userLevel.isFirstTime {

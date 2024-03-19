@@ -22,19 +22,8 @@ public struct GameStartView: View {
                 case.Result(let stars, let list): ResultScreen(isWin: stars != 0, starsCount: stars, list: list)
                 }
             }.ignoresSafeArea(.all)
-//            .onAppear {
-//                SoundManager.shared
-//            }
    
       
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-////        GameStartView(isPresenting: false)
-////            .environment(\.font, Font.custom("Tajawal", size: 14))
-////         
-//
-//    }
-//}
