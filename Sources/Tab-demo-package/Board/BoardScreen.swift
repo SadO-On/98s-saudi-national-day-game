@@ -72,7 +72,7 @@ struct BoardScreen: View {
              
 
                 ZStack (alignment: .bottom){
-                    FalehFealsState(falehFeel: viewModel.state.falehFeel)
+                    FealsState(feel: viewModel.state.falehFeel)
                     Text("شعور التسعيني")
                         .font(.system(size: 20))
                         .fontWeight(.bold)
