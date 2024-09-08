@@ -29,10 +29,10 @@ struct TimerView: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(borderColor, lineWidth: 0)
                 .frame(width: CGFloat(percent) * multiplayer, height: 39)
-                .background(Color(red: 0.722, green: 0.384, blue: 0.82))
+                .background(Color(red: 0.30, green: 0.73, blue: 0.74))
 
             RoundedRectangle(cornerRadius: 12)
-                .stroke(borderColor, lineWidth: 6)
+                .stroke(Color(red: 0.06, green: 0.25, blue: 0.36), lineWidth: 6)
                 .frame(width: width, height: 40)
 
             Text(time)

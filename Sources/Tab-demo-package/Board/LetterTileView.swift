@@ -19,7 +19,7 @@ struct LetterTileView: View {
             .scaleEffect(!letter.isSelected && letter.isSwiped ? 1.3 : 1)
             .frame(width: UIScreen.screenWidth * 0.18, height: UIScreen.screenWidth * 0.18)
             .foregroundColor(.white)
-            .background(letter.isWrong ? wrongAnswerColor: letter.isSelected ? correctAnswerColor : colNumber % 2 == 0 ? firstColColor : secondColColor)
+            .background(letter.isWrong ? wrongAnswerColor: letter.isSelected ? correctAnswerColor : colNumber % 2 == 0 ? secondColColor : firstColColor)
             .cornerRadius(10)
             .animation(.snappy, value: letter.isSwiped)
             .animation(.snappy, value: letter.isWrong)
@@ -28,5 +28,8 @@ struct LetterTileView: View {
 }
 
 #Preview {
-    LetterTileView(letter: Letter(id: "ج", letter: "د", isSwiped: false, isSelected: false, isWrong: false), colNumber: 1)
+    LetterTileView(letter: Letter(id: "ج", letter: "د", isSwiped: false, isSelected: false, isWrong: false), colNumber: 2)
 }
+
+
+

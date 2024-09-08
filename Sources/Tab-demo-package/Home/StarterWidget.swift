@@ -86,7 +86,7 @@ class PlayerUIView: UIView {
         playerLayer.player = player
         player.actionAtItemEnd = .none
         layer.addSublayer(playerLayer)
-        playerLayer.backgroundColor = UIColor(red: 0.82, green: 0.706, blue: 0.863, alpha: 1).cgColor
+        playerLayer.backgroundColor = UIColor(red: 0.22, green: 0.57, blue: 0.54, alpha: 1.00).cgColor
     }
 }
 

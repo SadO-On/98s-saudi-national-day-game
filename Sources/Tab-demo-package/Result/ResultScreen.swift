@@ -51,7 +51,7 @@ struct ResultScreen: View {
                         .font(.system(size: 20))
                         .fontWeight(.bold)
                         .padding(.bottom, 16)
-                        .foregroundColor(textColor)
+                        .foregroundColor(.white)
                         .scaleEffect(scales[2])
                         .onChange(of: isShow, perform: { _ in
                             withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.4)) {

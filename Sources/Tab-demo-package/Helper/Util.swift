@@ -54,17 +54,17 @@ extension View {
     }
 }
 
-let background = Color(red: 0.82, green: 0.706, blue: 0.863) // #d1b4dc
+let background = Color(red: 0.22, green: 0.57, blue: 0.54)
 let gradientColor = [
-    Color(red: 0.976, green: 0.976, blue: 0.976),
-    Color(red: 0.976, green: 0.976, blue: 0.976),
-    Color(red: 0.976, green: 0.976, blue: 0.976),
-    Color(red: 0.933, green: 0.882, blue: 0.945),
-    Color(red: 0.898, green: 0.796, blue: 0.925),
+    Color(red: 0.98, green: 0.98, blue: 0.98),
+    Color(red: 0.89, green: 0.95, blue: 0.95),
+    Color(red: 0.89, green: 0.95, blue: 0.95),
+    Color(red: 0.81, green: 0.92, blue: 0.92),
 ]
-let borderColor = Color(red: 0.431, green: 0.192, blue: 0.475)
-let firstColColor = Color(red: 0.835, green: 0.49, blue: 0.973)
-let secondColColor = Color(red: 0.612, green: 0.318, blue: 0.725)
-let textColor = Color(red: 0.624, green: 0.31, blue: 0.753) 
-let correctAnswerColor = Color(red: 0.361, green: 0.835, blue: 0.898)
-let wrongAnswerColor = Color(red: 0.875, green: 0.18, blue: 0.678)
+let borderColor = Color(red: 0.30, green: 0.73, blue: 0.74)
+let firstColColor = Color(red: 0.15, green: 0.44, blue: 0.42)
+let secondColColor = Color(red: 0.26, green: 0.80, blue: 0.76)
+
+let correctAnswerColor = Color(red: 0.39, green: 0.66, blue: 0.36)
+let wrongAnswerColor = Color(red: 0.80, green: 0.12, blue: 0.07)
+

@@ -49,7 +49,7 @@ struct BoardScreen: View {
                 Text("كل كلمة تجدها تمثل ١٠٠ نقطة")
                     .font(.system(size: 20))
                     .fontWeight(.bold)
-                    .foregroundColor(textColor)
+                    .foregroundColor(.white)
                 Spacer()
                 VStack(alignment: .leading, spacing:  UIScreen.screenWidth * 0.06) {
                     ForEach(0 ..< viewModel.state.grid.count, id: \.self) { row in
@@ -76,7 +76,7 @@ struct BoardScreen: View {
                     Text("شعور التسعيني")
                         .font(.system(size: 20))
                         .fontWeight(.bold)
-                        .foregroundColor(textColor)
+                        .foregroundColor(.white)
                 }.padding(.bottom, 4)
             }
             if isPause {

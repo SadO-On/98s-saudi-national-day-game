@@ -11,11 +11,9 @@ import SwiftUI
 struct PointsView: View {
     let points: Int32
     let gradientColor = [
-        Color(red: 0.616, green: 0.322, blue: 0.729),
-        Color(red: 0.616, green: 0.322, blue: 0.729),
-        Color(red: 0.616, green: 0.322, blue: 0.729),
-        Color(red: 0.596, green: 0.31, blue: 0.702),
-        Color(red: 0.58, green: 0.298, blue: 0.678),
+        Color(red: 0.35, green: 0.73, blue: 0.74),
+        Color(red: 0.13, green: 0.95, blue: 0.96),
+        Color(red: 0.31, green: 0.75, blue: 0.76)
     ]
     var body: some View {
         Text("\(points) نقطة")
@@ -30,7 +28,7 @@ struct PointsView: View {
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(borderColor, lineWidth: 2)
+                    .stroke(Color(red: 0.06, green: 0.25, blue: 0.36), lineWidth: 2)
             )
     }
 }
