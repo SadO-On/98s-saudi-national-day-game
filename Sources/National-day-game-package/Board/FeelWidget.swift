@@ -13,19 +13,16 @@ struct FealsState: View {
     let feel: FalehFeel
 
     var body: some View {
-  
-            switch feel {
-            case .idle:
-                FeelWidget(state: idleRes, holder: idleRes, frameCount: idleFrameCount)
-            case .correct:
-                FeelWidget(state: correctRes, holder: correctRes, frameCount: correctFrameCount)
-            case .sleep:
-                FeelWidget(state: sleepRes, holder: sleepRes, frameCount: sleepFrameCount)
-            default:
-                FeelWidget(state: idleRes, holder: idleRes, frameCount: idleFrameCount)
-            }
-  
-
+        switch feel {
+        case .idle:
+            FeelWidget(state: idleRes, holder: idleRes, frameCount: idleFrameCount)
+        case .correct:
+            FeelWidget(state: correctRes, holder: correctRes, frameCount: correctFrameCount)
+        case .sleep:
+            FeelWidget(state: sleepRes, holder: sleepRes, frameCount: sleepFrameCount)
+        default:
+            FeelWidget(state: idleRes, holder: idleRes, frameCount: idleFrameCount)
+        }
     }
 }
 
@@ -41,38 +38,40 @@ struct FeelWidget: View {
         Image(state, bundle: .module)
             .resizable()
             .scaledToFit()
-            .frame(width: UIScreen.screenWidth * 0.5,height: UIScreen.screenWidth * 0.3, alignment: .bottom)
-// 300 170
-            
+            .frame(width: UIScreen.screenWidth * 0.5, height: UIScreen.screenWidth * 0.3, alignment: .bottom)
+            // 300 170
+
             .onDisappear(perform: {
                 timer.upstream.connect().cancel()
             })
-            
+
             .onReceive(timer, perform: { _ in
-                state = "\(holder)\(index)"
-                index += 1
-                if index > frameCount {
-                    if holder == idleRes {
-                        index = 2
-                    } else {
-                        state = idleRes
-                        holder = idleRes
-                        frameCount = idleFrameCount
-                        index = 2
-                    }
-                }
-            })
+                print("\(holder)\(index)")
+                     state = "\(holder)\(index)"
+                     index += 1
+                     if index > frameCount {
+                         if holder == idleRes {
+                             index = 2
+                         } else {
+                                 index = 2
+                                 state = idleRes
+                                 holder = idleRes
+                                 frameCount = idleFrameCount
+                            
+                         }
+                     }
+                 })
     }
 }
 
 #Preview {
-    FealsState(feel: .idle)
+    FealsState(feel: .correct)
 }
 
 private let sleepRes = "sleepFrame"
 private let idleRes = "idleFrame"
 private let correctRes = "rightAnswerFrame"
 
-private let sleepFrameCount = 214
-private let idleFrameCount = 192
-private let correctFrameCount = 80
+private let sleepFrameCount = 170
+private let idleFrameCount = 124
+private let correctFrameCount = 60

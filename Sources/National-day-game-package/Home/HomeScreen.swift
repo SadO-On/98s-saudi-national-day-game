@@ -47,10 +47,10 @@ struct HomeScreen: View {
 
                 LevelComponentWidget(level: String(viewModel.state.userLevel.level),
                                      percent: viewModel.state.userLevel.xp)
-                    .scaleEffect(scales[1])
+                    .scaleEffect(scales[2])
                     .onAppear {
-                        withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0)) {
-                            scales[1] = 1
+                        withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.1)) {
+                            scales[2] = 1
                         }
                     }
                     .padding(.horizontal)
@@ -58,15 +58,15 @@ struct HomeScreen: View {
                     Image("title", bundle: .module)
                         .resizable()
                         .frame(width: UIScreen.screenWidth * 0.85, height: UIScreen.screenWidth * 0.25)
-                }.scaleEffect(scales[2])
+                }.scaleEffect(scales[1])
                     .onAppear {
-                        withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.3)) {
-                            scales[2] = 1
+                        withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.1)) {
+                            scales[1] = 1
                         }
                     }        
                 StarterAnimatedWidget()
                     .onAppear(perform: {
-                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.3)) {
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.7)) {
                         scales[2] = 1
                     }
                 })
@@ -83,7 +83,7 @@ struct HomeScreen: View {
                     self.viewModel.startObserving()
                     self.viewModel.onEevent(event: HomeEvents.GetLevel())
                     // Animate to full size with a spring effect
-                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.4)) {
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.5)) {
                         scales[3] = 1 // Animate to full size
                     }
                 }
