@@ -116,7 +116,7 @@ struct ResultScreen: View {
             }.onAppear{
                 isShow = true
             }
-            .imageShareSheet(isPresented: $showShareSheet, image: UIImage(named: starsCount == 3 ? "share_3" : "share_2", in: .module, with: nil)!)
+            .imageShareSheet(isPresented: $showShareSheet, image: UIImage(named: starsCount == 3 ? "share-1" : "share-1", in: .module, with: nil)!)
         }
     }
 }
