@@ -73,10 +73,7 @@ struct BoardScreen: View {
 
                 ZStack (alignment: .bottom){
                     FealsState(feel: viewModel.state.falehFeel)
-                    Text("شعور التسعيني")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
+            
                 }.padding(.bottom, 4)
             }
             if isPause {

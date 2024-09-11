@@ -38,7 +38,7 @@ struct FeelWidget: View {
         Image(state, bundle: .module)
             .resizable()
             .scaledToFit()
-            .frame(width: UIScreen.screenWidth * 0.5, height: UIScreen.screenWidth * 0.3, alignment: .bottom)
+            .frame(width: UIScreen.screenWidth * 0.55, height: UIScreen.screenWidth * 0.35, alignment: .bottom)
             // 300 170
 
             .onDisappear(perform: {
@@ -46,7 +46,6 @@ struct FeelWidget: View {
             })
 
             .onReceive(timer, perform: { _ in
-                print("\(holder)\(index)")
                      state = "\(holder)\(index)"
                      index += 1
                      if index > frameCount {
