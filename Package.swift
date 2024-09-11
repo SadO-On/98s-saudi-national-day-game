@@ -32,7 +32,7 @@ let package = Package(
             resources: [.process("Media.xcassets"), .process("Sound"), .process("Lottie"), .process("Video")]),
         
      
-        .binaryTarget(name: "Shared", path: "./Sources/shared.xcframework")
+        .binaryTarget(name: "Shared", path: "./Sources/Shared.xcframework")
 
     ]
 )
