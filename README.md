@@ -83,3 +83,7 @@ In case of version conflicts with existing dependencies in your project, follow 
 2. Check our documentation for recommended versions and update conflicting dependencies accordingly.
 3. If issues persist, reach out to us for personalized assistance. [Contact us here](https://www.98s.studio/).
 
+## License
+
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for more details.
+
