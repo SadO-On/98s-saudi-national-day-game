@@ -36,7 +36,7 @@ struct HomeScreen: View {
                     }, label: {
                         Image("back_btn", bundle: .module)
                     }).padding()
-
+                    
                     Spacer()
                 }.scaleEffect(scales[0])
                     .onAppear {
@@ -44,16 +44,16 @@ struct HomeScreen: View {
                             scales[0] = 1
                         }
                     }
-
+                
                 LevelComponentWidget(level: String(viewModel.state.userLevel.level),
                                      percent: viewModel.state.userLevel.xp)
-                    .scaleEffect(scales[2])
-                    .onAppear {
-                        withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.1)) {
-                            scales[2] = 1
-                        }
+                .scaleEffect(scales[2])
+                .onAppear {
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.1)) {
+                        scales[2] = 1
                     }
-                    .padding(.horizontal)
+                }
+                .padding(.horizontal)
                 HStack {
                     Image("title", bundle: .module)
                         .resizable()
@@ -63,13 +63,13 @@ struct HomeScreen: View {
                         withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.1)) {
                             scales[1] = 1
                         }
-                    }        
+                    }
                 StarterAnimatedWidget()
                     .onAppear(perform: {
-                    withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.7)) {
-                        scales[2] = 1
-                    }
-                })
+                        withAnimation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0).delay(0.7)) {
+                            scales[2] = 1
+                        }
+                    })
                 Spacer()
                 PrimaryButtonWidget(text: "العب", onClick: {
                     if viewModel.state.userLevel.isFirstTime {
@@ -77,7 +77,7 @@ struct HomeScreen: View {
                     } else {
                         pilot.push(.Board(isFirstTime: false))
                     }
-                })
+                }).padding(.bottom,20)
                 .scaleEffect(scales[3])
                 .onAppear {
                     self.viewModel.startObserving()
@@ -87,10 +87,14 @@ struct HomeScreen: View {
                         scales[3] = 1 // Animate to full size
                     }
                 }
-                Button(action: { openURL(URL(string: "https://twitter.com/98sStudio")!)
-                }, label: {
-                    Image("powered_by", bundle: .module).padding(.top)
-                }).padding(.bottom, 40)
+                
+                if !UIDevice.current.isIPhoneSE {
+                    
+                    Button(action: { openURL(URL(string: "https://www.98s.studio/en")!)
+                    }, label: {
+                        Image("powered_by", bundle: .module).padding(.top)
+                    }).padding(.bottom, 20)
+                }
             }
         }.navigationBarHidden(true).navigationBarTitle("")
     }

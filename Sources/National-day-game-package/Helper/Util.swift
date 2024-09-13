@@ -68,3 +68,18 @@ let secondColColor = Color(red: 0.26, green: 0.80, blue: 0.76)
 let correctAnswerColor = Color(red: 0.39, green: 0.66, blue: 0.36)
 let wrongAnswerColor = Color(red: 0.80, green: 0.12, blue: 0.07)
 
+
+
+import UIKit
+
+extension UIDevice {
+    var isIPhoneSE: Bool {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            let screenSize = UIScreen.main.bounds.size
+            if (screenSize.height == 568.0) || (screenSize.height == 667.0 && screenSize.width == 375.0) {
+                return true
+            }
+        }
+        return false
+    }
+}

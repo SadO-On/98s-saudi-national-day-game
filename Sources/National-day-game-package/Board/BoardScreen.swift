@@ -46,7 +46,7 @@ struct BoardScreen: View {
                     })
                 }
                 Spacer()
-                Text("كل كلمة تجدها تمثل ١٠٠ نقطة")
+                Text("كل كلمة وطنية تجدها تمثل ١٠٠ نقطة")
                     .font(.system(size: 20))
                     .fontWeight(.bold)
                     .foregroundColor(.white)
