@@ -55,6 +55,19 @@ struct ContentView: View {
     }
 }
 ```
+## Accessing Player Level and XP
+
+To access the player’s level and XP, you can use UserDefaults. The key names for retrieving this information are `level` and `xp`. Here’s how you can do it:
+
+### Swift Example
+
+```swift
+// Retrieve player level
+let playerLevel = UserDefaults.standard.integer(forKey: "level")
+
+// Retrieve player XP
+let playerXP = UserDefaults.standard.integer(forKey: "xp")
+```
 
 ## Compatibility
 
